@@ -1,13 +1,16 @@
 <script>
+  import { onMount } from 'svelte';
   import svelteLogo from './assets/svelte.svg'
   import Counter from './lib/Counter.svelte'
+    import Random from './lib/Random.svelte';
+  import Update from './lib/Random.svelte';
 </script>
 
 <main>
   <h1><span class="hot">High</span> <span class="or">OR</span> <span class="cold">Low</span></h1>
 
   <div class="card">
-    <Counter />
+    <Random/>
   </div>
   
   <p>
