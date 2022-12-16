@@ -2,12 +2,14 @@
   import { onMount } from 'svelte';
   import svelteLogo from './assets/svelte.svg'
   import Counter from './lib/Counter.svelte'
-    import Random from './lib/Random.svelte';
+  import Random from './lib/Random.svelte';
   import Update from './lib/Random.svelte';
 </script>
 
 <main>
   <h1><span class="hot">High</span> <span class="or">OR</span> <span class="cold">Low</span></h1>
+
+  <p style="margin-bottom: 0px;"class="read-the-docs">A simple number guessing game! Guess a number between <strong>1 to 100</strong>. A hint will appear saying <strong>High OR Low</strong>. Enjoy this simple but addicting game!</p>
 
   <div class="card">
     <Random/>
@@ -19,6 +21,7 @@
 
   <footer class="read-the-docs">
     <p>
+      Built by <a href="https://www.technotalks.net" target="new">TechnoTalks</a> with ❤️<br/>
       Powered by Vite + Svelte
     </p>
       <!-- svelte-ignore security-anchor-rel-noreferrer -->
@@ -45,7 +48,9 @@
     filter: drop-shadow(0 0 2em #ff3e00aa);
   }
   .read-the-docs {
-    color: #888;
+    color: rgba(255, 255, 255, 0.819);
+    width: 400px;
+    filter: drop-shadow(3em black);
   }
   .hot {
     color: red;

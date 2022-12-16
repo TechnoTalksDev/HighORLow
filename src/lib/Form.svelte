@@ -7,7 +7,7 @@
         const formRaw = new FormData(event.target)
         event.target.reset()
         const guess = formRaw.get('guess')
-        console.log("this is shit")
+        //console.log("this is shit")
 
         dispatch('input', guess)
     }

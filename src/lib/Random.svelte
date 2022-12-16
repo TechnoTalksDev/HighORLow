@@ -1,8 +1,23 @@
 <script>
     import Form from "./Form.svelte";
-    export const random = Math.floor(Math.random() * (100 - 1)) + 1
-    console.log(random)
+    import { Confetti } from "svelte-confetti"
+    import Dopamine from "./Dopamine.svelte";
+    import Counter from "./Counter.svelte";
 
+    function generate(max) {
+      const number = Math.floor(Math.random() * (max - 1)) + 1
+      return number
+    }
+
+    function setbg(bg) {
+      document.documentElement.style.setProperty('--bg', bg)
+    }
+
+    let random = generate()
+
+    console.log(random)
+    
+    let amount
     let temp = "or"
     let hint = "Enter a guess!"
 
@@ -16,24 +31,32 @@
             console.log(random)
             hint = "Lower!"
             temp = "cold"
+            setbg("skyblue")
             
         }else if(guess < random) {
             console.log('guess is less')
             console.log(random)
             hint = "Higher!"
             temp = "hot"
+            setbg("red")
         }
         else {
-            console.log('GUESSEDDD!!! GG!!! WP!!!!!')
             console.log(random)
+            random = generate(100)
             hint = "You got it! (New number generated!)"
             temp = "or"
+            amount = Math.floor(Math.random() * 50) + 150
+            console.log("Amount: "+amount)
+            setbg("#242424")
         }
     }
 </script>
 
 <h2 class={temp}>{hint}</h2>
+
 <Form on:input={processInput}/>
+
+<Dopamine amount={amount}/>
 
 <style>
   .hot {
@@ -65,4 +88,11 @@
   .or:not(:hover) {
     transition: 5s;
   }
+
+  :root {
+    --bg: #242424;
+    transition: 3s;
+    background-image: linear-gradient(to bottom right,#242424, 80%, var(--bg));
+  }
+
 </style>
