@@ -50,7 +50,6 @@
   .read-the-docs {
     color: rgba(255, 255, 255, 0.819);
     width: 400px;
-    filter: drop-shadow(3em black);
   }
   .hot {
     color: red;

@@ -47,7 +47,7 @@
             temp = "or"
             amount = Math.floor(Math.random() * 50) + 150
             console.log("Amount: "+amount)
-            setbg("#242424")
+            setbg("#ffffff")
         }
     }
 </script>
@@ -90,8 +90,7 @@
   }
 
   :root {
-    --bg: #242424;
-    transition: 3s;
+    --bg: #ffffff;
     background-image: linear-gradient(to bottom right,#242424, 80%, var(--bg));
   }
 
